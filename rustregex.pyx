@@ -5,6 +5,7 @@ import ctypes
 from libcpp.vector cimport vector
 from libcpp.utility cimport pair
 import shutil
+from libc.stdint cimport *
 
 ctypedef void (*callback_function)(size_t, size_t) noexcept nogil
 ctypedef void (*pure_rustc_function)(const char*, const char*, callback_function*) noexcept nogil
@@ -62,7 +63,7 @@ cpdef rust_regex(const unsigned char[:] regex, const unsigned char[:] string):
     cdef:
         const char* r = <const char*>(&(regex[0]))
         const char* s = <const char*>(&(string[0]))
-        list[(int,int)] result_list
+        list[(uint64_t,uint64_t)] result_list
     with nogil:
         fu[0](r,s,ptr_callback_function)
     result_list=result_vector
