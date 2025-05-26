@@ -9,3 +9,4 @@ crate-type = ["cdylib"]      # Required to build a dynamic library (DLL/.so/.dyl
 [dependencies]
 regex = "1"                  # Regex crate for regular expressions
 libc = "0.2"                 # For FFI-compatible types like `c_char`
+once_cell = "1"

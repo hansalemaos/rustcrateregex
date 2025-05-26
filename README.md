@@ -40,6 +40,8 @@ pip install rustcrateregex
 ## Basic Usage
 
 ```python
+from rustcrateregex import RustRegex
+
 # Create a RustRegex instance from a pattern supporting both str and bytes.
 homer = RustRegex(r"Homer (.)\. Simpson")
 
